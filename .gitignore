@@ -1,0 +1,16 @@
+# Folder Kompilasi
+[Bb]in/
+[Oo]bj/
+bin/
+
+# Aset Gambar & Logo
+images/
+logo/
+bg/
+
+# File Sementara Visual Studio & Access
+.vs/
+*.ldb
+*.laccdb
+*.user
+*.mdb
