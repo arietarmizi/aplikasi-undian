@@ -60,7 +60,8 @@ Partial Class FrmGrandprize
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.Maroon
+        Me.Panel2.BackColor = System.Drawing.Color.DarkOrange
+        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.txtJumlahPemenang)
         Me.Panel2.Controls.Add(Me.Label1)
@@ -73,61 +74,63 @@ Partial Class FrmGrandprize
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.DarkOrange
+        Me.Button1.AutoEllipsis = True
+        Me.Button1.BackColor = System.Drawing.Color.RoyalBlue
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.Location = New System.Drawing.Point(276, 46)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(95, 40)
+        Me.Button1.Size = New System.Drawing.Size(93, 40)
         Me.Button1.TabIndex = 3
-        Me.Button1.Text = "START"
+        Me.Button1.Text = "START "
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button1.UseVisualStyleBackColor = False
         '
         'txtJumlahPemenang
         '
-        Me.txtJumlahPemenang.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtJumlahPemenang.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtJumlahPemenang.Location = New System.Drawing.Point(217, 52)
         Me.txtJumlahPemenang.Name = "txtJumlahPemenang"
-        Me.txtJumlahPemenang.Size = New System.Drawing.Size(48, 29)
+        Me.txtJumlahPemenang.Size = New System.Drawing.Size(48, 31)
         Me.txtJumlahPemenang.TabIndex = 78
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label1.Location = New System.Drawing.Point(78, 60)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(51, 56)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(126, 14)
+        Me.Label1.Size = New System.Drawing.Size(165, 21)
         Me.Label1.TabIndex = 77
         Me.Label1.Text = "Jumlah Pemenang :"
         '
         'cmbDoorprize
         '
         Me.cmbDoorprize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbDoorprize.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbDoorprize.Font = New System.Drawing.Font("Montserrat", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbDoorprize.FormattingEnabled = True
         Me.cmbDoorprize.Location = New System.Drawing.Point(217, 8)
         Me.cmbDoorprize.MaxLength = 75
         Me.cmbDoorprize.Name = "cmbDoorprize"
-        Me.cmbDoorprize.Size = New System.Drawing.Size(256, 32)
+        Me.cmbDoorprize.Size = New System.Drawing.Size(256, 34)
         Me.cmbDoorprize.TabIndex = 75
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label3.Location = New System.Drawing.Point(82, 18)
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Montserrat", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(104, 14)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(121, 14)
+        Me.Label3.Size = New System.Drawing.Size(113, 21)
         Me.Label3.TabIndex = 76
-        Me.Label3.Text = "Select Grandprize :"
+        Me.Label3.Text = "Pilih Hadiah :"
         '
         'picPhoto
         '
@@ -142,7 +145,8 @@ Partial Class FrmGrandprize
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Maroon
+        Me.Panel1.BackColor = System.Drawing.Color.DarkOrange
+        Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
         Me.Panel1.Controls.Add(Me.lblTipe)
         Me.Panel1.Controls.Add(Me.lblCompany)
         Me.Panel1.Location = New System.Drawing.Point(-15, 618)
@@ -152,9 +156,9 @@ Partial Class FrmGrandprize
         '
         'lblTipe
         '
-        Me.lblTipe.BackColor = System.Drawing.Color.Maroon
+        Me.lblTipe.BackColor = System.Drawing.Color.Transparent
         Me.lblTipe.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTipe.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblTipe.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblTipe.Location = New System.Drawing.Point(360, 70)
         Me.lblTipe.Name = "lblTipe"
         Me.lblTipe.Size = New System.Drawing.Size(665, 29)
@@ -164,9 +168,9 @@ Partial Class FrmGrandprize
         '
         'lblCompany
         '
-        Me.lblCompany.BackColor = System.Drawing.Color.Maroon
+        Me.lblCompany.BackColor = System.Drawing.Color.Transparent
         Me.lblCompany.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCompany.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblCompany.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblCompany.Location = New System.Drawing.Point(348, 3)
         Me.lblCompany.Name = "lblCompany"
         Me.lblCompany.Size = New System.Drawing.Size(691, 73)
@@ -205,7 +209,7 @@ Partial Class FrmGrandprize
         'lvlist
         '
         Me.lvlist.FormattingEnabled = True
-        Me.lvlist.Location = New System.Drawing.Point(959, 20)
+        Me.lvlist.Location = New System.Drawing.Point(968, 20)
         Me.lvlist.Name = "lvlist"
         Me.lvlist.Size = New System.Drawing.Size(177, 368)
         Me.lvlist.TabIndex = 76

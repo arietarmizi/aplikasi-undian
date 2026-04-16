@@ -25,6 +25,8 @@ Partial Class FrmCompany
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmCompany))
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btnBulkDelete = New System.Windows.Forms.Button()
+        Me.BtnImport = New System.Windows.Forms.Button()
         Me.txtType = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtCompany = New System.Windows.Forms.TextBox()
@@ -42,8 +44,6 @@ Partial Class FrmCompany
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.txtInput = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.BtnImport = New System.Windows.Forms.Button()
-        Me.btnBulkDelete = New System.Windows.Forms.Button()
         Me.TabControl2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -84,6 +84,26 @@ Partial Class FrmCompany
         Me.TabPage2.TabIndex = 0
         Me.TabPage2.Text = "Company Data"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'btnBulkDelete
+        '
+        Me.btnBulkDelete.BackColor = System.Drawing.Color.Salmon
+        Me.btnBulkDelete.Location = New System.Drawing.Point(162, 387)
+        Me.btnBulkDelete.Name = "btnBulkDelete"
+        Me.btnBulkDelete.Size = New System.Drawing.Size(112, 35)
+        Me.btnBulkDelete.TabIndex = 83
+        Me.btnBulkDelete.Text = "Hapus Semua Data"
+        Me.btnBulkDelete.UseVisualStyleBackColor = False
+        '
+        'BtnImport
+        '
+        Me.BtnImport.BackColor = System.Drawing.Color.YellowGreen
+        Me.BtnImport.Location = New System.Drawing.Point(6, 387)
+        Me.BtnImport.Name = "BtnImport"
+        Me.BtnImport.Size = New System.Drawing.Size(150, 35)
+        Me.BtnImport.TabIndex = 82
+        Me.BtnImport.Text = "Import Excel (.CSV)"
+        Me.BtnImport.UseVisualStyleBackColor = False
         '
         'txtType
         '
@@ -204,7 +224,8 @@ Partial Class FrmCompany
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Maroon
+        Me.Panel1.BackColor = System.Drawing.Color.DarkOrange
+        Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Location = New System.Drawing.Point(-4, -1)
         Me.Panel1.Name = "Panel1"
@@ -214,13 +235,14 @@ Partial Class FrmCompany
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(15, 20)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(169, 25)
+        Me.Label4.Size = New System.Drawing.Size(174, 25)
         Me.Label4.TabIndex = 0
-        Me.Label4.Text = "COMPANY LIST"
+        Me.Label4.Text = "Daftar Distributor"
         '
         'TabControl1
         '
@@ -272,26 +294,6 @@ Partial Class FrmCompany
         Me.Label9.TabIndex = 29
         Me.Label9.Text = "Type to search"
         '
-        'BtnImport
-        '
-        Me.BtnImport.BackColor = System.Drawing.Color.YellowGreen
-        Me.BtnImport.Location = New System.Drawing.Point(6, 387)
-        Me.BtnImport.Name = "BtnImport"
-        Me.BtnImport.Size = New System.Drawing.Size(150, 35)
-        Me.BtnImport.TabIndex = 82
-        Me.BtnImport.Text = "Import Excel (.CSV)"
-        Me.BtnImport.UseVisualStyleBackColor = False
-        '
-        'btnBulkDelete
-        '
-        Me.btnBulkDelete.BackColor = System.Drawing.Color.Salmon
-        Me.btnBulkDelete.Location = New System.Drawing.Point(162, 387)
-        Me.btnBulkDelete.Name = "btnBulkDelete"
-        Me.btnBulkDelete.Size = New System.Drawing.Size(112, 35)
-        Me.btnBulkDelete.TabIndex = 83
-        Me.btnBulkDelete.Text = "Hapus Semua Data"
-        Me.btnBulkDelete.UseVisualStyleBackColor = False
-        '
         'FrmCompany
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -303,7 +305,7 @@ Partial Class FrmCompany
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "FrmCompany"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "MASTER COMPANY"
+        Me.Text = "Distributor"
         Me.TabControl2.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()

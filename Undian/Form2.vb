@@ -2,15 +2,14 @@
     Private Declare Function GetAsyncKeyState Lib "user32" (ByVal vkey As Integer) As Integer
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.KeyPreview = True
         Timer1.Enabled = True
     End Sub
 
     Private Sub Form2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
         If e.KeyChar = Chr(Keys.Escape) Then
-            End
-
+            Application.Exit()
         End If
-
     End Sub
 
     Private Sub Form2_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
@@ -50,10 +49,10 @@
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Label6.Text = Format(Now, "dd")
         If Label6.Text >= Label7.Text Then
-            End
+            Application.Exit()
         End If
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        End
+        Application.Exit()
     End Sub
 End Class

@@ -60,26 +60,17 @@ Public Class FrmMaster
         End With
     End Sub
     Private Function GetFileImages() As String
-        '// Get the Filename + Extension only
         Dim iArr() As String
         iArr = Split(newFileName, "\")
         GetFileImages = iArr(UBound(iArr))
-        '//
-        '// If same original and new
         If orgPicName = newFileName Then Return GetFileImages
-        '// Remove original picture
         If orgPicName IsNot Nothing Or orgPicName <> "" Then
             If System.IO.File.Exists(orgPicName) = True Then
                 System.IO.File.Delete(orgPicName)
             End If
         End If
-        '// ------------- Copy File -------------
-        ' Determine whether the source file is real or not.
         If System.IO.File.Exists(newFileName) = True Then
-            ' Trap Error in the case source = destination
             If LCase(strPathImages + GetFileImages) <> LCase(newFileName) Then
-                ' Copy the Source file (newFileName) to the Destination (DestFile). 
-                ' If the same file is found, overwrite (OverWrite = True).
                 System.IO.File.Copy(newFileName, strPathImages + GetFileImages, True)
             End If
         End If
@@ -87,8 +78,9 @@ Public Class FrmMaster
 
     Private Sub cmdSave_Click(sender As Object, e As EventArgs) Handles cmdSave.Click
         On Error GoTo salah
-        If txtName.Text = "" Or txtNo.Text = "" Then
-            MsgBox("Complete the data first", vbCritical)
+
+        If txtName.Text = "" Or txtNo.Text = "" Or picPhoto.Image Is Nothing Then
+            MsgBox("Lengkapi semua data termasuk foto!", vbCritical, "Peringatan")
         Else
             Dim CMDx As OleDbCommand
             Dim vImage As Byte() = ConvertImage(picPhoto.Image)
@@ -106,7 +98,7 @@ Public Class FrmMaster
         End If
         Exit Sub
 salah:
-        MsgBox("Check your input", vbInformation, "Confirmation")
+        MsgBox("Check your input: " & Err.Description, vbInformation, "Confirmation")
     End Sub
 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
@@ -137,7 +129,7 @@ salah:
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         If txtName.Text = "" Or txtNo.Text = "" Or picPhoto.Image Is Nothing Then
-            MsgBox("Lengkapi data dan foto", vbCritical)
+            MsgBox("Lengkapi data dan foto sebelum melakukan update!", vbCritical, "Peringatan")
         Else
             Dim vImage As Byte() = ConvertImage(picPhoto.Image)
             Call Koneksi()
@@ -173,7 +165,6 @@ salah:
         If Not rd.HasRows Then
             txtNo.Text = "1"
         Else
-            ' get last ID and increment by 1 for the new entry
             txtNo.Text = Val(rd.Item("id")) + 1
         End If
 

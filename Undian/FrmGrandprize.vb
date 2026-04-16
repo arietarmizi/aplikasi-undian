@@ -95,11 +95,7 @@ Public Class FrmGrandprize
 
             If Con.State = ConnectionState.Open Then Con.Close()
 
-            ' --- TAMPILAN DI FORM GRANDPRIZE ---
-            'lblCompany.Text = String.Join(Environment.NewLine, companyList)
-            'lblTipe.Text = String.Join(Environment.NewLine, typeList)
             lblCompany.Text = "SELAMAT KEPADA PEMENANG."
-            ' Font adjustment for FrmGrandprize
             AutoAdjustFont(lblCompany)
 
             loadList()
@@ -121,12 +117,7 @@ Public Class FrmGrandprize
                 nomorUrut += 1
             Next
 
-            ' send formatted data to Form1
-            Form1.lblCompany.Text = String.Join(Environment.NewLine, formatPemenang)
-
-            ' auto adjust font for Form1
-            AutoAdjustFont(Form1.lblCompany)
-
+            Form1.ShowCenterScreen(String.Join(Environment.NewLine, formatPemenang))
             Form1.ShowDialog()
         End If
     End Sub
@@ -221,7 +212,7 @@ salah:
 
     Private Sub loadCombo()
         Try
-            Dim sqL As String = "select no, jenis, picturename, kategori from doorprize where kategori like '" & Label4.Text & "' order by jenis asc"
+            Dim sqL As String = "select no, jenis, picturename, kategori from doorprize where kategori like '" & Label4.Text & "' order by ID asc"
             Koneksi()
             Dim cmdx As New OleDbCommand(sqL, Con)
             Dim drx As OleDbDataReader = cmdx.ExecuteReader(CommandBehavior.CloseConnection)

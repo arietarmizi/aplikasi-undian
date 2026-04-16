@@ -215,6 +215,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="Assets\bg\KV Raffle 1200x600 px.png" />
+    <Content Include="Assets\prize\Hadiah Raffle 1290x1200 px.png" />
     <Content Include="connect.ico" />
   </ItemGroup>
   <ItemGroup>
